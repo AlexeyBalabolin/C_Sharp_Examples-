@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<Contact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <FullName>Alex</FullName>
-  <Street>Minina Street</Street>
-  <HouseNumber>5</HouseNumber>
-  <AppartmentNumber>32</AppartmentNumber>
-  <MobilePhoneNumber>89999999999</MobilePhoneNumber>
-  <FlatPhoneNumber>2222222</FlatPhoneNumber>
-</Contact>
