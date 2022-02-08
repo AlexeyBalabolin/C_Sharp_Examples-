@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Person name="Bob Smith">
+  <Adress>
+    <Street>Viazov Street</Street>
+    <HouseNumber>45</HouseNumber>
+    <FlatNumber>6</FlatNumber>
+  </Adress>
+  <Phones>
+    <MobilePhone>89009999999</MobilePhone>
+    <FlatPhone>2222222</FlatPhone>
+  </Phones>
+</Person>
