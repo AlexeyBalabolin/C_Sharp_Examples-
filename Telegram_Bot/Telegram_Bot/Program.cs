@@ -13,7 +13,8 @@ namespace Telegram_Bot
         static TelegramBotClient bot;
         static void Main(string[] args)
         {
-            string token = "5243940499:AAESnqLAxRuAH7J3wQSiYfXrF_mFX9LI0PA";
+            string path = @"C:/Users/VR/Desktop/Token.txt";
+            string token = File.ReadAllText(path);
             bot = new TelegramBotClient(token);
             bot.StartReceiving();
             bot.OnMessage += OnMessageHandler;
