@@ -11,6 +11,8 @@ namespace Telegram_Bot
     class Program
     {
         static TelegramBotClient bot;
+        static string[] stikers = new string[3] { "Дыра", "Отэц", "Роскошно" };
+
         static void Main(string[] args)
         {
             string path = @"C:/Users/VR/Desktop/Token.txt";
@@ -43,12 +45,23 @@ namespace Telegram_Bot
                     {
                         bot.SendTextMessageAsync(message.Chat.Id, "Приветствую!");
                     }
-                    if(message.Text== "Отправь стикер")
+                    if(message.Text== stikers[0])
                     {
-                        var stik = bot.SendStickerAsync(message.Chat.Id, sticker: 
-                            "https://cdn.tlgrm.app/stickers/ec5/c1b/ec5c1b75-12ea-45bd-aa7b-33491089b8e5/192/1.webp");
+                        var stik = bot.SendStickerAsync(message.Chat.Id, sticker:
+                            "https://cdn.tlgrm.app/stickers/ec5/c1b/ec5c1b75-12ea-45bd-aa7b-33491089b8e5/96/1.webp");
                     }
-                    bot.SendTextMessageAsync(message.Chat.Id, message.Text, replyMarkup: GetButtons());
+                    else if (message.Text == stikers[1])
+                    {
+                        var stik = bot.SendStickerAsync(message.Chat.Id, sticker:
+                            "https://cdn.tlgrm.app/stickers/ec5/c1b/ec5c1b75-12ea-45bd-aa7b-33491089b8e5/96/6.webp");
+                    }
+                    else if (message.Text == stikers[2])
+                    {
+                        var stik = bot.SendStickerAsync(message.Chat.Id, sticker:
+                            "https://cdn.tlgrm.app/stickers/ec5/c1b/ec5c1b75-12ea-45bd-aa7b-33491089b8e5/96/7.webp");
+                    }
+                    else
+                        bot.SendTextMessageAsync(message.Chat.Id, "Что нужно сделать?", replyMarkup: GetButtons());
                     break;
                 case Telegram.Bot.Types.Enums.MessageType.Photo:
                     bot.SendTextMessageAsync(message.Chat.Id,"Крутая картинка!");
@@ -62,7 +75,9 @@ namespace Telegram_Bot
             {
                 Keyboard = new List<List<KeyboardButton>>
                 {
-                    new List<KeyboardButton>{ new KeyboardButton {Text = "Отправь стикер"} }
+                    new List<KeyboardButton>{ new KeyboardButton {Text = stikers[0]},
+                    new KeyboardButton {Text = stikers[1]},
+                    new KeyboardButton {Text = stikers[2]}}
                 }
             };
         }
