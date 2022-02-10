@@ -11,12 +11,14 @@ namespace Telegram_Bot
     class Program
     {
         static TelegramBotClient bot;
-        static string[] stikers = new string[3] { "Дыра", "Отэц", "Роскошно" };
-
+        static Dictionary<string, string> stikersDictionary = new Dictionary<string, string>();
         static void Main(string[] args)
         {
             string path = @"C:/Users/VR/Desktop/Token.txt";
             string token = File.ReadAllText(path);
+            stikersDictionary.Add("Дыра", "https://cdn.tlgrm.app/stickers/ec5/c1b/ec5c1b75-12ea-45bd-aa7b-33491089b8e5/96/1.webp");
+            stikersDictionary.Add("Отэц", "https://cdn.tlgrm.app/stickers/ec5/c1b/ec5c1b75-12ea-45bd-aa7b-33491089b8e5/96/6.webp");
+            stikersDictionary.Add("Роскошно", "https://cdn.tlgrm.app/stickers/ec5/c1b/ec5c1b75-12ea-45bd-aa7b-33491089b8e5/96/7.webp");
             bot = new TelegramBotClient(token);
             bot.StartReceiving();
             bot.OnMessage += OnMessageHandler;
@@ -45,20 +47,9 @@ namespace Telegram_Bot
                     {
                         bot.SendTextMessageAsync(message.Chat.Id, "Приветствую!");
                     }
-                    if(message.Text== stikers[0])
+                    if(stikersDictionary.ContainsKey(message.Text))
                     {
-                        var stik = bot.SendStickerAsync(message.Chat.Id, sticker:
-                            "https://cdn.tlgrm.app/stickers/ec5/c1b/ec5c1b75-12ea-45bd-aa7b-33491089b8e5/96/1.webp");
-                    }
-                    else if (message.Text == stikers[1])
-                    {
-                        var stik = bot.SendStickerAsync(message.Chat.Id, sticker:
-                            "https://cdn.tlgrm.app/stickers/ec5/c1b/ec5c1b75-12ea-45bd-aa7b-33491089b8e5/96/6.webp");
-                    }
-                    else if (message.Text == stikers[2])
-                    {
-                        var stik = bot.SendStickerAsync(message.Chat.Id, sticker:
-                            "https://cdn.tlgrm.app/stickers/ec5/c1b/ec5c1b75-12ea-45bd-aa7b-33491089b8e5/96/7.webp");
+                        var stik = bot.SendStickerAsync(message.Chat.Id, sticker: stikersDictionary[message.Text]);
                     }
                     else
                         bot.SendTextMessageAsync(message.Chat.Id, "Что нужно сделать?", replyMarkup: GetButtons());
@@ -75,9 +66,9 @@ namespace Telegram_Bot
             {
                 Keyboard = new List<List<KeyboardButton>>
                 {
-                    new List<KeyboardButton>{ new KeyboardButton {Text = stikers[0]},
-                    new KeyboardButton {Text = stikers[1]},
-                    new KeyboardButton {Text = stikers[2]}}
+                    new List<KeyboardButton>{ new KeyboardButton {Text = "Дыра"},
+                    new KeyboardButton {Text = "Отэц"},
+                    new KeyboardButton {Text = "Роскошно"}}
                 }
             };
         }
