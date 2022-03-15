@@ -47,6 +47,11 @@ namespace Telegram_Bot
                     {
                         bot.SendTextMessageAsync(message.Chat.Id, "Приветствую!");
                     }
+                    else if(message.Text.Contains("Покажи файлы"))
+                    {
+                        GetDownloadedFiles("Downloads", message.Chat.Id);
+                        
+                    }
                     if(stikersDictionary.ContainsKey(message.Text))
                     {
                         var stik = bot.SendStickerAsync(message.Chat.Id, sticker: stikersDictionary[message.Text]);
@@ -76,11 +81,29 @@ namespace Telegram_Bot
         private static async void DownloadDocument(string fileId, string fileName)
         {
             var file = await bot.GetFileAsync(fileId);
+            fileName = $"Downloads/{fileName}";
             FileStream fStream = new FileStream(fileName, FileMode.Create);
             await bot.DownloadFileAsync(file.FilePath, fStream);
             fStream.Close();
             fStream.Dispose();
         }
 
+        public static void GetDownloadedFiles(string path, long chatID)
+        {
+            string[] fileEntries = Directory.GetFiles(path);
+            foreach (string fileName in fileEntries)
+                bot.SendTextMessageAsync(chatID, fileName);
+
+        }
+        public static void SendDocumentToUser(long chatID, string filePath, string fileName)
+        {
+            using (var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+            {
+                bot.SendDocumentAsync(chatId: chatID,
+                    document: new Telegram.Bot.Types.InputFiles.InputOnlineFile(fileStream, fileName),
+                    caption: "Test");                  
+            }
+            
+        }
     }
 }
