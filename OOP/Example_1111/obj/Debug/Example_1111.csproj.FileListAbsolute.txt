@@ -1,0 +1,13 @@
+D:\ Work\SkillBox\CodeSource\Theme_11\Example_1111\bin\Debug\Example_1111.exe.config
+D:\ Work\SkillBox\CodeSource\Theme_11\Example_1111\bin\Debug\Example_1111.exe
+D:\ Work\SkillBox\CodeSource\Theme_11\Example_1111\bin\Debug\Example_1111.pdb
+D:\ Work\SkillBox\CodeSource\Theme_11\Example_1111\obj\Debug\Example_1111.csprojAssemblyReference.cache
+D:\ Work\SkillBox\CodeSource\Theme_11\Example_1111\obj\Debug\Example_1111.csproj.CoreCompileInputs.cache
+D:\ Work\SkillBox\CodeSource\Theme_11\Example_1111\obj\Debug\Example_1111.exe
+D:\ Work\SkillBox\CodeSource\Theme_11\Example_1111\obj\Debug\Example_1111.pdb
+C:\Users\VR\Desktop\C_Sharp_Examples-\OOP\Example_1111\bin\Debug\Example_1111.exe.config
+C:\Users\VR\Desktop\C_Sharp_Examples-\OOP\Example_1111\bin\Debug\Example_1111.exe
+C:\Users\VR\Desktop\C_Sharp_Examples-\OOP\Example_1111\bin\Debug\Example_1111.pdb
+C:\Users\VR\Desktop\C_Sharp_Examples-\OOP\Example_1111\obj\Debug\Example_1111.csprojAssemblyReference.cache
+C:\Users\VR\Desktop\C_Sharp_Examples-\OOP\Example_1111\obj\Debug\Example_1111.exe
+C:\Users\VR\Desktop\C_Sharp_Examples-\OOP\Example_1111\obj\Debug\Example_1111.pdb
