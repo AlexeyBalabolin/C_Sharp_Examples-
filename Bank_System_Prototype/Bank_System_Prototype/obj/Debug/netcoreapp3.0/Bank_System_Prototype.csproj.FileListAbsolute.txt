@@ -1,0 +1,11 @@
+C:\Users\VR\Desktop\C_Sharp_Examples-\Bank_System_Prototype\Bank_System_Prototype\bin\Debug\netcoreapp3.0\Bank_System_Prototype.exe
+C:\Users\VR\Desktop\C_Sharp_Examples-\Bank_System_Prototype\Bank_System_Prototype\bin\Debug\netcoreapp3.0\Bank_System_Prototype.deps.json
+C:\Users\VR\Desktop\C_Sharp_Examples-\Bank_System_Prototype\Bank_System_Prototype\bin\Debug\netcoreapp3.0\Bank_System_Prototype.runtimeconfig.json
+C:\Users\VR\Desktop\C_Sharp_Examples-\Bank_System_Prototype\Bank_System_Prototype\bin\Debug\netcoreapp3.0\Bank_System_Prototype.runtimeconfig.dev.json
+C:\Users\VR\Desktop\C_Sharp_Examples-\Bank_System_Prototype\Bank_System_Prototype\bin\Debug\netcoreapp3.0\Bank_System_Prototype.dll
+C:\Users\VR\Desktop\C_Sharp_Examples-\Bank_System_Prototype\Bank_System_Prototype\bin\Debug\netcoreapp3.0\Bank_System_Prototype.pdb
+C:\Users\VR\Desktop\C_Sharp_Examples-\Bank_System_Prototype\Bank_System_Prototype\obj\Debug\netcoreapp3.0\Bank_System_Prototype.csprojAssemblyReference.cache
+C:\Users\VR\Desktop\C_Sharp_Examples-\Bank_System_Prototype\Bank_System_Prototype\obj\Debug\netcoreapp3.0\Bank_System_Prototype.AssemblyInfoInputs.cache
+C:\Users\VR\Desktop\C_Sharp_Examples-\Bank_System_Prototype\Bank_System_Prototype\obj\Debug\netcoreapp3.0\Bank_System_Prototype.AssemblyInfo.cs
+C:\Users\VR\Desktop\C_Sharp_Examples-\Bank_System_Prototype\Bank_System_Prototype\obj\Debug\netcoreapp3.0\Bank_System_Prototype.dll
+C:\Users\VR\Desktop\C_Sharp_Examples-\Bank_System_Prototype\Bank_System_Prototype\obj\Debug\netcoreapp3.0\Bank_System_Prototype.pdb

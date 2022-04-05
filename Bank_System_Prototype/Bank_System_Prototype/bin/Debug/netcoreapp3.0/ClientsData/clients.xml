@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ArrayOfClient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Client>
+    <FirstName>John</FirstName>
+    <LastName>Smith</LastName>
+    <PassportData>2222 555555555</PassportData>
+    <PhoneNumber>85555555555</PhoneNumber>
+  </Client>
+  <Client>
+    <FirstName>James</FirstName>
+    <LastName>Brown</LastName>
+    <PassportData>2222 222222222</PassportData>
+    <PhoneNumber>88005000000</PhoneNumber>
+  </Client>
+</ArrayOfClient>
