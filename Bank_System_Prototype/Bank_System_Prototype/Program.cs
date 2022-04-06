@@ -21,15 +21,16 @@ namespace Bank_System_Prototype
             clients[0] = consultant1.ChangePhoneNumber(clients[0], "2222222");
             Console.WriteLine(consultant1.GetClientInfo(clients[0]));
 
+            Manager manager1 = new Manager();
+            clients[1]=manager1.ChangePassportData(clients[1], "222256785456");
+            Console.WriteLine(manager1.GetClientInfo(clients[1]));
+            Console.WriteLine(clients[1].GetInfo());
+
             /*
             //перезапись данных
             Serializer.Serialize(clients, path);
             */
 
-            Manager manager1 = new Manager();
-            clients[1]=manager1.ChangePassportData(clients[1], "222256785456");
-            Console.WriteLine(manager1.GetClientInfo(clients[1]));
-            Console.WriteLine(clients[1].GetInfo());
         }
     }
 }

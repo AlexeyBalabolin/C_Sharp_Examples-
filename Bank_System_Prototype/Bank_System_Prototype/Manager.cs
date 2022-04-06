@@ -9,6 +9,7 @@ namespace Bank_System_Prototype
             {
                 currentClient.FirstName = firstName;
                 currentClient.LastName = lastName;
+                currentClient.ChangeData(DataType.NameData, WorkerType.Manager, TypeOfChanges.Change);
             }
             return currentClient;
         }
@@ -18,6 +19,7 @@ namespace Bank_System_Prototype
             if (passportData != string.Empty)
             {
                 currentClient.PassportData = passportData;
+                currentClient.ChangeData(DataType.PassportData, WorkerType.Manager, TypeOfChanges.Change);
             }
             return currentClient;
         }

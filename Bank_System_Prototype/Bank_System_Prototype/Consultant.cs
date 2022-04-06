@@ -2,9 +2,9 @@
 
 namespace Bank_System_Prototype
 {
-    class Consultant
+    class Consultant : Worker
     {
-        public string GetClientInfo(Client currentClient)
+        public override string GetClientInfo(Client currentClient)
         {
             StringBuilder sBuilder = new StringBuilder();
             for (int i = 0; i < currentClient.PassportData.Length; i++)
@@ -12,10 +12,11 @@ namespace Bank_System_Prototype
             return $"{currentClient.FirstName} {currentClient.LastName} {sBuilder} {currentClient.PhoneNumber}";
         }
 
-        public Client ChangePhoneNumber(Client currentClient, string phoneNumber)
+        public override Client ChangePhoneNumber(Client currentClient, string phoneNumber)
         {
             if (phoneNumber != string.Empty)
                 currentClient.PhoneNumber = phoneNumber;
+            currentClient.ChangeData(DataType.PhoneData, WorkerType.Consultant, TypeOfChanges.Change);
             return currentClient;
         }
     }
