@@ -4,7 +4,7 @@
     <FirstName>John</FirstName>
     <LastName>Smith</LastName>
     <PassportData>2222 555555555</PassportData>
-    <PhoneNumber>85555555555</PhoneNumber>
+    <PhoneNumber>2222222</PhoneNumber>
   </Client>
   <Client>
     <FirstName>James</FirstName>
