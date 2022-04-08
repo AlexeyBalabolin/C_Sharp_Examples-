@@ -8,28 +8,39 @@ namespace Bank_System_Prototype
         static void Main(string[] args)
         {
             string path = "ClientsData/clients.xml";
-            List<Client> clients = new List<Client>();
+            ClientsRepository<Client> repository1 = new ClientsRepository<Client>();
+            repository1.AddClient(new Client("Alex", "Brown", "222222222222", "88005554444"));
+            repository1.AddClient(new Client("Bob", "Smith", "2200222200002222", "8888888888"));
 
-            clients = Serializer.Deserialize(path);
-            foreach (var client in clients)
+            foreach (var client in repository1)
                 Console.WriteLine(client.GetInfo());
-            Console.WriteLine();
-
-            Consultant consultant1 = new Consultant();
-            Console.WriteLine(consultant1.GetClientInfo(clients[1]));
-            consultant1.ChangeClientInfo(clients[0], "2222222");
-            Console.WriteLine(consultant1.GetClientInfo(clients[0]));
-            Console.WriteLine();
 
             Manager manager1 = new Manager();
-            Console.WriteLine(manager1.GetClientInfo(clients[1]));
-            manager1.ChangeClientInfo(clients[1], "88007774455", "Peter Parker", "1234 1234 4564 4643");
-            Console.WriteLine(manager1.GetClientInfo(clients[1]));
+            manager1.AddNewClient(repository1, new Client("Jack", "Sparrow", "2000111222333", "88005555555"));
+            Console.WriteLine(manager1.GetClientInfo(repository1, 2));
 
-            /*
+            Consultant consultant1 = new Consultant();
+            Console.WriteLine(consultant1.GetClientInfo(repository1, 2));
+
+            consultant1.ChangeClientInfo(repository1, 1, "222111");
+            Console.WriteLine(consultant1.GetClientInfo(repository1, 1));
+
+            manager1.ChangeClientInfo(repository1, 0, "33", "Alex Brown", "0000000");
+
+            List<Worker> workers = new List<Worker>() { consultant1, manager1 };
+            foreach (var worker in workers)
+                Console.WriteLine(worker.GetClientInfo(repository1, 0));
+
+            Console.WriteLine();
+
+
+            //сортировка репозитория по имени
+            repository1.Clients.Sort();
+            foreach (var client in repository1)
+                Console.WriteLine(client.GetInfo());
+
             //перезапись данных
-            Serializer.Serialize(clients, path);
-            */
+            //Serializer.Serialize(repository1, path);
 
         }
     }

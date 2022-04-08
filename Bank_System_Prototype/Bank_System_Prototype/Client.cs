@@ -1,7 +1,9 @@
 ﻿
+using System;
+
 namespace Bank_System_Prototype
 {
-    public class Client
+    public class Client: IComparable
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -23,5 +25,16 @@ namespace Bank_System_Prototype
 
         public string GetInfo() => $"{FirstName} {LastName} {PassportData} {PhoneNumber}";
 
+
+        /// <summary>
+        /// реализация интерфейса IComparable для сортировки по параметру
+        /// </summary>
+        /// <param name="obj">клиент для сравнения с текущим</param>
+        /// <returns></returns>
+        public int CompareTo(object obj)
+        {
+            Client client = (Client)obj;
+            return String.Compare(this.FirstName, client.FirstName);
+        }
     }
 }

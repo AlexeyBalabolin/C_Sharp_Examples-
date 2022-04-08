@@ -5,6 +5,7 @@ namespace Bank_System_Prototype
     {
         NameData,
         PassportData,
-        PhoneData
+        PhoneData,
+        NewClient
     }
 }
