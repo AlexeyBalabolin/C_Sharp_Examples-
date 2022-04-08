@@ -4,21 +4,23 @@ namespace Bank_System_Prototype
 {
     class Consultant : Worker
     {
-        public override void ChangeClientInfo(Client currentClient, params string[] clientData)
+
+        public override void ChangeClientInfo(ClientsRepository<Client> currentRepository, int id, params string[] clientData)
         {
-            if(clientData[0] !=string.Empty)
+            if (clientData[0] != string.Empty)
             {
-                currentClient.PhoneNumber = clientData[0];
+                currentRepository.Clients[id].PhoneNumber = clientData[0];
                 LogChanges log = new LogChanges(DataType.PhoneData, WorkerType.Consultant, TypeOfChanges.Change);
             }
         }
 
-        public override string GetClientInfo(Client currentClient)
+        public override string GetClientInfo(ClientsRepository<Client> currentRepository , int id)
         {
             StringBuilder sBuilder = new StringBuilder();
-            for (int i = 0; i < currentClient.PassportData.Length; i++)
+            for (int i = 0; i < currentRepository.Clients[id].PassportData.Length; i++)
                 sBuilder.Append("*");
-            return $"{currentClient.FirstName} {currentClient.LastName} {sBuilder} {currentClient.PhoneNumber}";
+            return $"{currentRepository.Clients[id].FirstName} {currentRepository.Clients[id].LastName} " +
+                $"{sBuilder} {currentRepository.Clients[id].PhoneNumber}";
         }
     }
 }

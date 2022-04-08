@@ -2,6 +2,6 @@
 {
     interface IChangeInfo
     {
-        void ChangeClientInfo(Client currentClient, params string[] clientData);
+        void ChangeClientInfo(ClientsRepository<Client> currentRepository, int id , params string[] clientData);
     }
 }

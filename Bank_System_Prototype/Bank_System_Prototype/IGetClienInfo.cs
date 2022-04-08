@@ -3,6 +3,6 @@ namespace Bank_System_Prototype
 {
     interface IGetClienInfo
     {
-        string GetClientInfo(Client currentClient);
+        string GetClientInfo(ClientsRepository<Client> currentRepository, int id);
     }
 }

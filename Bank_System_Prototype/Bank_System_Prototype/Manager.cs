@@ -1,32 +1,41 @@
 ﻿
 namespace Bank_System_Prototype
 {
-    class Manager:Worker
+    class Manager:Worker, IAddClient
     {
-        public override void ChangeClientInfo(Client currentClient, params string[] clientData)
+        public void AddNewClient(ClientsRepository<Client> currentRepository, Client currentClient)
         {
-            if(clientData[0] != string.Empty)
+            currentRepository.AddClient(currentClient);
+            LogChanges log = new LogChanges(DataType.NewClient, WorkerType.Manager, TypeOfChanges.Add);
+        }
+
+        public override void ChangeClientInfo(ClientsRepository<Client> currentRepository, int id, params string[] clientData)
+        {
+            if (clientData[0] != string.Empty)
             {
-                currentClient.PhoneNumber = clientData[0];
+                currentRepository.Clients[id].PhoneNumber = clientData[0];
                 LogChanges log = new LogChanges(DataType.PhoneData, WorkerType.Manager, TypeOfChanges.Change);
             }
             if (clientData[1] != string.Empty)
             {
                 var nameParts = clientData[1].Split(' ');
-                currentClient.FirstName = nameParts[0];
-                currentClient.LastName = nameParts[1];
+                currentRepository.Clients[id].FirstName = nameParts[0];
+                currentRepository.Clients[id].LastName = nameParts[1];
                 LogChanges log = new LogChanges(DataType.NameData, WorkerType.Manager, TypeOfChanges.Change);
             }
             if (clientData[2] != string.Empty)
             {
-                currentClient.PassportData = clientData[2];
+                currentRepository.Clients[id].PassportData = clientData[2];
                 LogChanges log = new LogChanges(DataType.PassportData, WorkerType.Manager, TypeOfChanges.Change);
             }
         }
 
-        public override string GetClientInfo(Client currentClient)
+        public override string GetClientInfo(ClientsRepository<Client> currentRepository, int id)
         {
-            return $"{currentClient.FirstName} {currentClient.LastName} {currentClient.PassportData} {currentClient.PhoneNumber}";
+            return $"{currentRepository.Clients[id].FirstName} " +
+                $"{currentRepository.Clients[id].LastName} " +
+                $"{currentRepository.Clients[id].PassportData} " +
+                $"{currentRepository.Clients[id].PhoneNumber}";
         }
     }
 }

@@ -1,15 +1,21 @@
 <?xml version="1.0"?>
 <ArrayOfClient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Client>
-    <FirstName>John</FirstName>
-    <LastName>Smith</LastName>
-    <PassportData>2222 555555555</PassportData>
-    <PhoneNumber>2222222</PhoneNumber>
+    <FirstName>Alex</FirstName>
+    <LastName>Brown</LastName>
+    <PassportData>222222222222</PassportData>
+    <PhoneNumber>88005554444</PhoneNumber>
   </Client>
   <Client>
-    <FirstName>James</FirstName>
-    <LastName>Brown</LastName>
-    <PassportData>2222 222222222</PassportData>
-    <PhoneNumber>88005000000</PhoneNumber>
+    <FirstName>Bob</FirstName>
+    <LastName>Smith</LastName>
+    <PassportData>2200222200002222</PassportData>
+    <PhoneNumber>222111</PhoneNumber>
+  </Client>
+  <Client>
+    <FirstName>Jack</FirstName>
+    <LastName>Sparrow</LastName>
+    <PassportData>2000111222333</PassportData>
+    <PhoneNumber>88005555555</PhoneNumber>
   </Client>
 </ArrayOfClient>
